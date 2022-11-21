@@ -1,0 +1,8 @@
+-- import: fpm
+
+-- fpm.package: meenukumari28.github.io/myftdwork
+download-base-url: https://raw.githubusercontent.com/meenukumari28/myftdwork/main
+
+-- fpm.dependency: fifthtry.github.io/doc-site as ds
+
+-- fpm.auto-import: ds
