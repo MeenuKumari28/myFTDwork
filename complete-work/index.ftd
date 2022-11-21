@@ -1,0 +1,284 @@
+-- import: fpm
+-- import: fifthtry.github.io/button
+
+
+-- ftd.color red: red
+dark: red
+
+-- ftd.color blue: blue
+dark: blue
+
+-- ftd.color green: green
+dark: green
+
+-- ftd.color purple: purple
+dark: purple
+
+-- ftd.color pink: pink
+dark: pink
+
+-- ftd.color yellow: yellow
+dark: yellow
+
+-- optional string query:
+
+-- object obj:
+function: console-print
+value: $query
+
+-- ftd.column:
+height: 180
+background-color: $fpm.color.main.success.base
+width: fill
+
+--- ftd.text: Search World
+anchor: parent
+color: $fpm.color.main.cta-tertiary.base
+left: 10
+top: 25
+padding-left: 10
+role: $fpm.type.heading-small
+
+--- ftd.input:
+placeholder: Search
+height: 45
+width: 350
+type: text
+margin-top: 20
+margin-bottom: 15
+margin-left: 550
+padding-left: 10
+border-radius: 25
+border-width: 2
+border-color: $fpm.color.main.cta-tertiary.base
+$on-input$: $query=$VALUE
+$on-change$: message-host $obj
+
+-- ftd.text:
+role: $fpm.type.heading-medium
+margin-top: 25
+
+You are searching for: {value}...
+
+--- ftd.text value: $query
+color: $fpm.color.main.error.border
+role: $fpm.type.heading-medium
+
+
+-- ftd.image-src src0: https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-674010.jpg&fm=jpg
+dark: https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-674010.jpg&fm=jpg
+
+-- ftd.image-src src1: https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png
+dark: https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png
+
+-- ftd.image-src src2: https://blog.ipleaders.in/wp-content/uploads/2021/07/751589-mickey-mouse.jpg
+dark: https://blog.ipleaders.in/wp-content/uploads/2021/07/751589-mickey-mouse.jpg
+
+-- ftd.image-src src3: https://blog.earlymoments.com/wp-content/uploads/2016/03/Mickey_Mouse_group_700x493.jpg
+dark: https://blog.earlymoments.com/wp-content/uploads/2016/03/Mickey_Mouse_group_700x493.jpg
+
+-- ftd.column col:
+width: fill
+integer count: 0
+
+--- ftd.integer: 
+value: $count
+align: center
+role: $fpm.type.heading-medium
+
+--- ftd.text: increment counter
+background-color: $fpm.color.main.accent.tertiary
+align: center
+height: 50
+padding: 15
+border-radius: 15
+margin-bottom: 10
+$on-click$: increment $count
+
+--- ftd.text: decrement counter
+background-color: $fpm.color.main.accent.tertiary
+align: center
+height: 50
+padding: 15
+border-radius: 15
+margin-bottom: 10
+$on-click$: decrement $count
+
+--- ftd.text: increment counter by 2 clamp 2 10
+background-color: $fpm.color.main.accent.tertiary
+align: center
+height: 50
+padding: 15
+border-radius: 15
+margin-bottom: 10
+$on-click$: increment $count by 2 clamp 2 10
+
+--- ftd.text: decrement counter clamp 0 10
+background-color: $fpm.color.main.accent.tertiary
+align: center
+height: 50
+padding: 15
+border-radius: 15
+margin-bottom: 10
+$on-click$: decrement $count clamp 0 10
+
+--- ftd.image:
+src: $src0
+height: 300
+width: 350
+align: center
+margin-bottom: 10
+if: $count == 0
+
+--- ftd.image:
+src: $src1
+height: 300
+width: 350
+align: center
+margin-bottom: 10
+if: $count == 1
+
+--- ftd.image:
+src: $src2
+height: 300
+width: 350
+align: center
+margin-bottom: 10
+if: $count == 2
+
+--- ftd.image:
+src: $src3
+height: 300
+width: 350
+align: center
+margin-bottom: 10
+if: $count == 3
+
+-- col:
+
+-- integer count: 0
+
+-- ftd.image next:
+ftd.image-src src:
+integer idx:
+src: $src
+if: $count == $idx
+$on-click$: increment $count clamp 0 3
+align: center
+height: 300
+width: 350
+
+-- ftd.image-src src4: https://blog.ipleaders.in/wp-content/uploads/2021/07/751589-mickey-mouse.jpg
+dark: https://blog.ipleaders.in/wp-content/uploads/2021/07/751589-mickey-mouse.jpg
+dark: https://blog.ipleaders.in/wp-content/uploads/2021/07/751589-mickey-mouse.jpg
+dark: https://blog.ipleaders.in/wp-content/uploads/2021/07/751589-mickey-mouse.jpg
+
+-- ftd.image-src src5: https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png
+dark: https://upload.wikimedia.org/wikipedia/en/d/d4/Mickey_Mouse.png
+
+-- ftd.image-src src6: https://blog.earlymoments.com/wp-content/uploads/2016/03/Mickey_Mouse_group_700x493.jpg
+dark: https://blog.earlymoments.com/wp-content/uploads/2016/03/Mickey_Mouse_group_700x493.jpg
+
+-- ftd.image-src src7: https://www.liveabout.com/thmb/YCJmu1khSJo8kMYM090QCd9W78U=/1250x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/powerpuff_girls-56a00bc45f9b58eba4aea61d.jpg
+dark: https://www.liveabout.com/thmb/YCJmu1khSJo8kMYM090QCd9W78U=/1250x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/powerpuff_girls-56a00bc45f9b58eba4aea61d.jpg
+
+-- next:
+src: $src4
+idx: 0
+
+-- next:
+src: $src5
+idx: 1
+
+-- next:
+src: $src6
+idx: 2
+
+-- next:
+src: $src7
+idx: 3
+
+-- ftd.text: Heading and Title
+align: center
+margin-top: 50
+color: $red
+region: h1
+
+-- ftd.column h1:
+region: h1
+padding-left: 20
+caption title:
+append-at: h1-id
+
+--- ftd.text:
+text: $title
+color: $red
+
+--- ftd.column:
+id: h1-id
+
+-- ftd.column h2:
+region: h2
+padding-left: 30
+caption title:
+append-at: h2-id
+
+--- ftd.text:
+text: $title
+color: $yellow
+
+--- ftd.column:
+id: h2-id
+
+-- ftd.column h3:
+region: h3
+padding-left: 40
+caption title:
+append-at: h3-id
+color: $green
+
+--- ftd.text:
+text: $title
+
+--- ftd.column:
+id: h3-id
+
+-- ftd.column h4:
+region: h4
+caption title:
+append-at: h4-id
+padding-left: 50
+color: $blue
+
+--- ftd.text:
+text: $title
+
+--- ftd.column:
+id: h4-id
+
+
+-- h1: This is h1 heading
+-- ftd.text:
+color: $red
+
+This is Ftd h1 heading text.
+
+-- h2: This is h2 heading
+-- ftd.text:
+color: $yellow
+
+This is Ftd h2 heading text.
+one
+
+-- h3: This is h3 Heading
+-- ftd.text:
+color: $green
+
+This is this text for heading 3
+
+-- h4: This is heaading 4:
+
+-- ftd.text:
+color: $blue
+
+This is heading 4 in blue color.

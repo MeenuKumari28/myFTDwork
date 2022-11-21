@@ -4,5 +4,7 @@
 download-base-url: https://raw.githubusercontent.com/meenukumari28/myftdwork/main
 
 -- fpm.dependency: fifthtry.github.io/doc-site as ds
+-- fpm.dependency: fifthtry.github.io/button
 
 -- fpm.auto-import: ds
+
