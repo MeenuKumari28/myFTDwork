@@ -8,3 +8,6 @@ download-base-url: https://raw.githubusercontent.com/meenukumari28/myftdwork/mai
 
 -- fpm.auto-import: ds
 
+
+-- fpm.sitemap:
+#index: /
